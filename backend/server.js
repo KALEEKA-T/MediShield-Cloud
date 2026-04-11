@@ -14,9 +14,11 @@ app.use(express.json());
 // =======================
 // MONGODB CONNECTION (FIXED)
 // =======================
+console.log("MONGO URI:", process.env.MONGO_URI);
+
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
+  .then(() => console.log("MongoDB connected ✅"))
+  .catch((err) => console.log("Mongo Error:", err));
 
 // =======================
 // USER SCHEMA
